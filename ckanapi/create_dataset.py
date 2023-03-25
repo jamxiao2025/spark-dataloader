@@ -6,7 +6,7 @@ import json
 
 dsCreator = 'riskEvaluator.json'
 
-APIKEY = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJjV1c2WUcwQmJNYXYyanE1clBQeEZjVWZNRjB2emVmTWF1a19laUZ4bDJjIiwiaWF0IjoxNjc3ODI2NzAyfQ.7ivzMXrnyDsjFa9ZF6QMI73TqpAZgYoaxFzIZQlXj7I'
+APIKEY = 'your-api-key'
 #this code does not iterate over json files right now 
 #read JSON file 
 
