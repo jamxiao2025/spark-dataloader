@@ -1,0 +1,19 @@
+import ckanapi 
+# grab resource_id
+resource_id = '8a346307-f32d-421f-a084-2b9719135859'
+
+url= "http://data.buspark.io/dataset/189a11f0-5500-4984-9b02-ae97c619cd7f/resource/8a346307-f32d-421f-a084-2b9719135859/download/data.csv"
+# put the details of the dataset we're going to create into a dict
+
+
+
+
+
+ckan = ckanapi.RemoteCKAN('http://data.buspark.io/', apikey='eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJjV1c2WUcwQmJNYXYyanE1clBQeEZjVWZNRjB2emVmTWF1a19laUZ4bDJjIiwiaWF0IjoxNjc3ODI2NzAyfQ.7ivzMXrnyDsjFa9ZF6QMI73TqpAZgYoaxFzIZQlXj7I', user_agent='ckanapi so test')
+resource_dict = {
+    'id': resource_id,
+    'url': url,
+    'description': 'more testing'
+}
+ckan.action.resource_patch(**resource_dict)
+#patching works for all fields but url

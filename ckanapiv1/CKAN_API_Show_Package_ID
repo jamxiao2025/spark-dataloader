@@ -1,0 +1,23 @@
+import requests
+import json
+# Set up the API endpoint and the necessary headers
+url = 'http://data.buspark.io/api/3/action/package_show'
+headers = {'Authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJjV1c2WUcwQmJNYXYyanE1clBQeEZjVWZNRjB2emVmTWF1a19laUZ4bDJjIiwiaWF0IjoxNjc3ODI2NzAyfQ.7ivzMXrnyDsjFa9ZF6QMI73TqpAZgYoaxFzIZQlXj7I'}
+
+# put the details of the dataset we're going to create into a dict
+resource_dict = {
+    'id': 'state_surplus_summer21',
+    'use_default_schema': False,
+    'include_tracking': False,
+    'include_plugin_data': False
+}
+
+# use the json module to dump the dictionary to a string for posting, encoding the URL
+data_dict =json.dumps(resource_dict)
+
+# Make the API request
+response = requests.post(url, headers=headers, data=resource_dict)
+
+# Extract the ID from the response
+response_dict = response.json()
+print(response_dict)
