@@ -1,5 +1,10 @@
 import requests
 import json
+from dotenv import load_dotenv
+import os 
+
+load_dotenv()
+my_API_KEY = os.getenv("API_KEY")
 # put the details of the dataset we're going to create into a dict
 dataset_dict = {
     'name': 'new_ds',
@@ -12,7 +17,7 @@ data_string =json.dumps(dataset_dict)
 
 # creating a dataset requires an authorization header
 headers = {
-    'Authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJjV1c2WUcwQmJNYXYyanE1clBQeEZjVWZNRjB2emVmTWF1a19laUZ4bDJjIiwiaWF0IjoxNjc3ODI2NzAyfQ.7ivzMXrnyDsjFa9ZF6QMI73TqpAZgYoaxFzIZQlXj7I',
+    'Authorization': my_API_KEY,
     'Content-Type': 'application/json'
     }
 # we'll use the package_create function to create a new dataset.

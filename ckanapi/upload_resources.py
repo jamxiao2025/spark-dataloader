@@ -3,9 +3,12 @@ import requests
 import sys
 import os
 import json 
+from dotenv import load_dotenv
 
+load_dotenv()
+my_API_KEY = os.getenv("API_KEY")
 package_id = 'd874af6c-cd54-4c4a-a05d-504df04e1df2'
-APIKEY = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJjV1c2WUcwQmJNYXYyanE1clBQeEZjVWZNRjB2emVmTWF1a19laUZ4bDJjIiwiaWF0IjoxNjc3ODI2NzAyfQ.7ivzMXrnyDsjFa9ZF6QMI73TqpAZgYoaxFzIZQlXj7I'
+APIKEY = my_API_KEY
 #this code does not iterate over json files right now 
 #read JSON file 
 for filename in os.listdir(os.path.join(sys.path[0],'StateSurplusS21')):

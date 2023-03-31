@@ -2,12 +2,14 @@ import ckanapi
 import requests
 import sys
 import os
-import json 
+import json
+from dotenv import load_dotenv
+
+load_dotenv()
+my_API_KEY = os.getenv("API_KEY")
 
 dsCreator = 'riskEvaluator.json'
-
-APIKEY = 'your-api-key'
-#this code does not iterate over json files right now 
+APIKEY = my_API_KEY
 #read JSON file 
 
 f = open(os.path.join(sys.path[0],'jsonf',dsCreator))

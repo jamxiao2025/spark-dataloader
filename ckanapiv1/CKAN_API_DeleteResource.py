@@ -1,6 +1,9 @@
 import requests
 import json
-
+from dotenv import load_dotenv
+import os 
+load_dotenv()
+my_API_KEY = os.getenv("API_KEY")
 # grab resource_id
 resource_id = 'ddc36b3a-b39d-49a7-b503-352f404cdcf5'
 
@@ -12,7 +15,7 @@ resource_dict = {
 # use the json module to dump the dictionary to a string for posting, encoding the URL
 # creating a dataset requires an authorization header
 headers = {
-    'Authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJjV1c2WUcwQmJNYXYyanE1clBQeEZjVWZNRjB2emVmTWF1a19laUZ4bDJjIiwiaWF0IjoxNjc3ODI2NzAyfQ.7ivzMXrnyDsjFa9ZF6QMI73TqpAZgYoaxFzIZQlXj7I',
+    'Authorization': my_API_KEY,
     #'Content-Type': 'multipart/form-data'
 }
 # we'll use the package_create function to create a new dataset.
